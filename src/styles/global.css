@@ -21,3 +21,59 @@ body {
   color: var(--color-text);
   background: #fff;
 }
+
+section[data-wws-field].wws-spacing-compact {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+section[data-wws-field].wws-spacing-standard {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+section[data-wws-field].wws-spacing-spacious {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.wws-visibility-hidden {
+  display: none !important;
+}
+
+.wws-selected {
+  outline: 3px solid #2e701f;
+  outline-offset: -3px;
+}
+
+@media (min-width: 768px) {
+  .wws-visibility-mobile {
+    display: none !important;
+  }
+
+  .wws-columns-1 .wws-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .wws-columns-2 .wws-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wws-columns-3 .wws-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .wws-columns-4 .wws-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .wws-visibility-desktop {
+    display: none !important;
+  }
+
+  .wws-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
