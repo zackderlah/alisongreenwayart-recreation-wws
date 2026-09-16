@@ -1,0 +1,252 @@
+{
+  "version": 1,
+  "name": "Alison Greenway Art",
+  "slug": "alisongreenwayart-recreation-wws",
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "preview_path": "/",
+      "schema": {
+        "_structure": {
+          "sections": {
+            "type": "sections",
+            "label": "Page sections",
+            "sections": {
+              "hero": {
+                "label": "Hero",
+                "fields": {
+                  "line1": { "type": "text", "label": "Primary heading" },
+                  "line2": { "type": "text", "label": "Accent heading" },
+                  "line3": { "type": "text", "label": "Byline" },
+                  "ctaLabel": { "type": "text", "label": "Button label" },
+                  "ctaUrl": { "type": "url", "label": "Button URL" }
+                },
+                "defaults": {
+                  "line1": "Custom Hand Drawn",
+                  "line2": "House Portrait Art",
+                  "line3": "By Alison Greenway",
+                  "ctaLabel": "Commission a House Portrait",
+                  "ctaUrl": "/house-portrait-commissions"
+                },
+                "layouts": ["default"],
+                "columns": ["1"],
+                "required": true,
+                "maxInstances": 1
+              },
+              "intro": {
+                "label": "House portrait introduction",
+                "fields": {
+                  "heading": { "type": "text", "label": "Heading" },
+                  "paragraphs": { "type": "list", "label": "Paragraphs", "fields": { "text": { "type": "textarea", "label": "Text" } } },
+                  "image": { "type": "image", "label": "Artwork image" },
+                  "imageAlt": { "type": "text", "label": "Image description" },
+                  "caption": { "type": "text", "label": "Image caption" },
+                  "contactLabel": { "type": "text", "label": "Contact button label" },
+                  "contactUrl": { "type": "url", "label": "Contact button URL" }
+                },
+                "defaults": {
+                  "heading": "Looking for someone to Draw Your House?",
+                  "paragraphs": [
+                    { "text": "Custom Pen and Ink Home Portraits, Quality Reproductions and Commissions" },
+                    { "text": "Your home tells a story of milestones, memories, and moments worth preserving. Whether it's the family home, a cozy cottage, or your beachside holiday home, each building portrait is hand-drawn with care using traditional pencil and ink techniques and a keen eye for detail." },
+                    { "text": "Artist Alison Greenway brings architecture to life with precision and heart, transforming your reference photos into a work of art you'll treasure forever." }
+                  ],
+                  "image": "/assets/McKenzie.webp",
+                  "imageAlt": "McKenzie-1024px",
+                  "caption": "Artwork is not AI generated",
+                  "contactLabel": "Contact",
+                  "contactUrl": "/contact+alison+greenway"
+                },
+                "layouts": ["default"],
+                "columns": ["2"],
+                "required": true,
+                "maxInstances": 1
+              },
+              "special": {
+                "label": "What makes the art special",
+                "fields": {
+                  "heading": { "type": "text", "label": "Heading" },
+                  "subheading": { "type": "text", "label": "Subheading" },
+                  "paragraphs": { "type": "list", "label": "Details", "fields": { "text": { "type": "textarea", "label": "Text" } } }
+                },
+                "defaults": {
+                  "heading": "What Makes Alison's Art Special?",
+                  "subheading": "Why Clients Love These Portraits",
+                  "paragraphs": [
+                    { "text": "Custom drawings can also be commissioned to feature your workplace building, business, office, stable complex, hotel or restaurant - these can be Tax Deductible." },
+                    { "text": "Perfect for Gifting These portraits make ideal gifts for holidays, birthdays, anniversaries, weddings, retirements, housewarming parties, and for new homeowners or anyone who appreciates art. Gift Vouchers are also available." },
+                    { "text": "Original Art Ownership You will own a physical piece of original art, a lasting treasure that captures the essence of your home." },
+                    { "text": "Certificate of Authenticity You will receive a Certificate to verify your artwork's originality, provenance, and value, offering you assurance." },
+                    { "text": "100% Hand-Drawn Art Meticulously crafted using quality COPIC Multi Liner pens and DERWENT Graphic pencils, Graphic Tint and Watercolour pencils, ensuring a unique, and authentic touch." },
+                    { "text": "Personalised Features Tailored to reflect your home’s distinctive characteristics and landscaping, making every portrait one-of-a-kind." },
+                    { "text": "No Digital Tricks My work is free from AI, filters, or digital alterations. It's about true craftsmanship and artistry." },
+                    { "text": "Progress Updates You will receive updates throughout the creation process, allowing you to witness your artwork come to life step by step." }
+                  ]
+                },
+                "layouts": ["default"],
+                "columns": ["2"],
+                "required": true,
+                "maxInstances": 1
+              },
+              "categories": {
+                "label": "Print categories",
+                "fields": {
+                  "heading": { "type": "text", "label": "Heading" },
+                  "subheading": { "type": "text", "label": "Subheading" },
+                  "items": {
+                    "type": "list",
+                    "label": "Categories",
+                    "fields": {
+                      "label": { "type": "text", "label": "Label" },
+                      "url": { "type": "url", "label": "URL" },
+                      "image": { "type": "image", "label": "Image" },
+                      "imageAlt": { "type": "text", "label": "Image description" }
+                    }
+                  }
+                },
+                "defaults": {
+                  "heading": "Quality Fine Art Giclee Prints Available",
+                  "subheading": "Shop by Category",
+                  "items": [
+                    { "label": "Queensland Homes", "url": "/queensland-homes", "image": "/assets/Bayrise-manor-BW-600px-webp.webp", "imageAlt": "Queensland Homes" },
+                    { "label": "Cottages", "url": "/queensland+cottage+art+collection", "image": "/assets/A-Little-Treasure-Colour-600px-webp.webp", "imageAlt": "Queensland Cottages Art Collection" },
+                    { "label": "Painting Reproductions", "url": "/painting-reproductions", "image": "/assets/Spring-Garden-BA-600px-webp.webp", "imageAlt": "Painting Reproductions" },
+                    { "label": "Art Commissions", "url": "/house-portrait-commissions", "image": "/assets/Commissions-gallery-6--1280px-webp.webp", "imageAlt": "Alison Greenway Art Commissions" }
+                  ]
+                },
+                "layouts": ["default"],
+                "columns": ["4"],
+                "required": true,
+                "maxInstances": 1
+              },
+              "gift": {
+                "label": "Gift artwork",
+                "fields": {
+                  "heading": { "type": "text", "label": "Heading" },
+                  "paragraphs": { "type": "list", "label": "Paragraphs", "fields": { "text": { "type": "textarea", "label": "Text" } } },
+                  "image": { "type": "image", "label": "Gift image" },
+                  "imageAlt": { "type": "text", "label": "Image description" }
+                },
+                "defaults": {
+                  "heading": "Finding the perfect gift can be difficult — especially when you want something personal and heartfelt.",
+                  "paragraphs": [
+                    { "text": "Commissioned artwork is a thoughtful way to celebrate life’s special moments. A detailed house portrait captures memories that last a lifetime." },
+                    { "text": "Alison Greenway is a dedicated artist based in Toowoomba, specialising in custom house portraits and commissioned artwork across Queensland. Her pieces are known for their warmth, detail, and personal touch — making them perfect gifts for those you love." },
+                    { "text": "A commissioned piece by Alison Greenway is more than art — it’s a lasting memory" }
+                  ],
+                  "image": "/assets/house-portrait-young-family-no-text.webp",
+                  "imageAlt": "Give a commissioned artwork as a gift. Alison Greenway Art"
+                },
+                "layouts": ["default"],
+                "columns": ["2"],
+                "required": true,
+                "maxInstances": 1
+              }
+            }
+          }
+        }
+      },
+      "content": {
+        "_structure": {
+          "sections": [
+            {
+              "id": "home-hero",
+              "type": "hero",
+              "layout": "default",
+              "columns": "1",
+              "spacing": "standard",
+              "visibility": "all",
+              "content": {
+                "line1": "Custom Hand Drawn",
+                "line2": "House Portrait Art",
+                "line3": "By Alison Greenway",
+                "ctaLabel": "Commission a House Portrait",
+                "ctaUrl": "/house-portrait-commissions"
+              }
+            },
+            {
+              "id": "house-portraits",
+              "type": "intro",
+              "layout": "default",
+              "columns": "2",
+              "spacing": "standard",
+              "visibility": "all",
+              "content": {
+                "heading": "Looking for someone to Draw Your House?",
+                "paragraphs": [
+                  { "text": "Custom Pen and Ink Home Portraits, Quality Reproductions and Commissions" },
+                  { "text": "Your home tells a story of milestones, memories, and moments worth preserving. Whether it's the family home, a cozy cottage, or your beachside holiday home, each building portrait is hand-drawn with care using traditional pencil and ink techniques and a keen eye for detail." },
+                  { "text": "Artist Alison Greenway brings architecture to life with precision and heart, transforming your reference photos into a work of art you'll treasure forever." }
+                ],
+                "image": "/assets/McKenzie.webp",
+                "imageAlt": "McKenzie-1024px",
+                "caption": "Artwork is not AI generated",
+                "contactLabel": "Contact",
+                "contactUrl": "/contact+alison+greenway"
+              }
+            },
+            {
+              "id": "art-special",
+              "type": "special",
+              "layout": "default",
+              "columns": "2",
+              "spacing": "standard",
+              "visibility": "all",
+              "content": {
+                "heading": "What Makes Alison's Art Special?",
+                "subheading": "Why Clients Love These Portraits",
+                "paragraphs": [
+                  { "text": "Custom drawings can also be commissioned to feature your workplace building, business, office, stable complex, hotel or restaurant - these can be Tax Deductible." },
+                  { "text": "Perfect for Gifting These portraits make ideal gifts for holidays, birthdays, anniversaries, weddings, retirements, housewarming parties, and for new homeowners or anyone who appreciates art. Gift Vouchers are also available." },
+                  { "text": "Original Art Ownership You will own a physical piece of original art, a lasting treasure that captures the essence of your home." },
+                  { "text": "Certificate of Authenticity You will receive a Certificate to verify your artwork's originality, provenance, and value, offering you assurance." },
+                  { "text": "100% Hand-Drawn Art Meticulously crafted using quality COPIC Multi Liner pens and DERWENT Graphic pencils, Graphic Tint and Watercolour pencils, ensuring a unique, and authentic touch." },
+                  { "text": "Personalised Features Tailored to reflect your home’s distinctive characteristics and landscaping, making every portrait one-of-a-kind." },
+                  { "text": "No Digital Tricks My work is free from AI, filters, or digital alterations. It's about true craftsmanship and artistry." },
+                  { "text": "Progress Updates You will receive updates throughout the creation process, allowing you to witness your artwork come to life step by step." }
+                ]
+              }
+            },
+            {
+              "id": "print-categories",
+              "type": "categories",
+              "layout": "default",
+              "columns": "4",
+              "spacing": "standard",
+              "visibility": "all",
+              "content": {
+                "heading": "Quality Fine Art Giclee Prints Available",
+                "subheading": "Shop by Category",
+                "items": [
+                  { "label": "Queensland Homes", "url": "/queensland-homes", "image": "/assets/Bayrise-manor-BW-600px-webp.webp", "imageAlt": "Queensland Homes" },
+                  { "label": "Cottages", "url": "/queensland+cottage+art+collection", "image": "/assets/A-Little-Treasure-Colour-600px-webp.webp", "imageAlt": "Queensland Cottages Art Collection" },
+                  { "label": "Painting Reproductions", "url": "/painting-reproductions", "image": "/assets/Spring-Garden-BA-600px-webp.webp", "imageAlt": "Painting Reproductions" },
+                  { "label": "Art Commissions", "url": "/house-portrait-commissions", "image": "/assets/Commissions-gallery-6--1280px-webp.webp", "imageAlt": "Alison Greenway Art Commissions" }
+                ]
+              }
+            },
+            {
+              "id": "gift-artwork",
+              "type": "gift",
+              "layout": "default",
+              "columns": "2",
+              "spacing": "standard",
+              "visibility": "all",
+              "content": {
+                "heading": "Finding the perfect gift can be difficult — especially when you want something personal and heartfelt.",
+                "paragraphs": [
+                  { "text": "Commissioned artwork is a thoughtful way to celebrate life’s special moments. A detailed house portrait captures memories that last a lifetime." },
+                  { "text": "Alison Greenway is a dedicated artist based in Toowoomba, specialising in custom house portraits and commissioned artwork across Queensland. Her pieces are known for their warmth, detail, and personal touch — making them perfect gifts for those you love." },
+                  { "text": "A commissioned piece by Alison Greenway is more than art — it’s a lasting memory" }
+                ],
+                "image": "/assets/house-portrait-young-family-no-text.webp",
+                "imageAlt": "Give a commissioned artwork as a gift. Alison Greenway Art"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
