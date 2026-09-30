@@ -21,3 +21,30 @@ body {
   color: var(--color-text);
   background: #fff;
 }
+
+.collection-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 2rem;
+}
+
+.collection-items > a {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .collection-items > a {
+    width: 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .collection-items > a {
+    width: 31%;
+  }
+
+  .collection-items-dense > a {
+    width: 23%;
+  }
+}

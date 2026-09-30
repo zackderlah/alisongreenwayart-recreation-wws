@@ -1,32 +1,27 @@
 ---
-import Button from "../Button.astro";
 import ArticleBlocks from "../ArticleBlocks.astro";
 
 const { page } = Astro.props;
-const prices = page.prices || [];
-const info = page.infoBox;
-const blocks = page.blocks || [];
-const description = page.description || [];
 ---
 
 <section class="px-4 py-8 md:py-12">
   <div class="mx-auto max-w-6xl">
     <h1 class="mb-8 text-center text-2xl font-semibold text-text md:text-3xl lg:hidden">{page.heading}</h1>
-    <div class="grid gap-10 lg:grid-cols-2">
-      <div class="mx-auto w-full max-w-md lg:max-w-none">
+    <div class="flex flex-col gap-10 lg:flex-row">
+      <div class="mx-auto w-full max-w-md lg:max-w-none lg:flex-1">
         {page.image && (
           <img src={page.image} alt={page.heading} class="w-full border border-gray-300" />
         )}
         <div class="mt-6 hidden lg:block">
-          <Button variant="primary" class="w-full max-w-md">Add to Cart</Button>
+          <button type="button" class="inline-flex w-full max-w-md items-center justify-center bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">{page.addToCartLabel}</button>
         </div>
       </div>
-      <div>
+      <div class="lg:flex-1">
         <h1 class="mb-6 hidden text-2xl font-semibold text-text md:text-3xl lg:block">{page.heading}</h1>
-        {prices.length > 0 && (
+        {page.prices?.[0] && (
           <table class="mb-6 w-full max-w-md text-left">
             <tbody>
-              {prices.map((p: { label: string; price: number; dimensions: string }) => (
+              {page.prices.map((p: { label: string; price: number; dimensions: string }) => (
                 <tr class="border-b border-gray-200">
                   <td class="py-2 pr-4 font-medium">{p.label}</td>
                   <td class="py-2 pr-4">${p.price}</td>
@@ -36,28 +31,28 @@ const description = page.description || [];
             </tbody>
           </table>
         )}
-        {blocks.length > 0 ? (
-          <ArticleBlocks blocks={blocks} />
+        {page.blocks?.[0] ? (
+          <ArticleBlocks blocks={page.blocks} />
         ) : (
-          description.map((p: string) => <p class="mb-4 leading-relaxed text-text">{p}</p>)
+          page.description?.map((p: string) => <p class="mb-4 leading-relaxed text-text">{p}</p>)
         )}
         <div class="mt-6 lg:hidden">
-          <Button variant="primary" class="w-full max-w-md">Add to Cart</Button>
+          <button type="button" class="inline-flex w-full max-w-md items-center justify-center bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">{page.addToCartLabel}</button>
         </div>
       </div>
     </div>
   </div>
 
-  {info && (
+  {page.infoBox && (
     <div class="mx-auto mt-12 max-w-6xl border border-brand bg-[#f8f8f8] p-8">
-      <h2 class="mb-2 text-lg font-bold text-text">Pricing</h2>
-      <p class="mb-6">{info.pricing}</p>
-      <h2 class="mb-2 text-lg font-bold text-text">Shipping Details</h2>
-      <p class="mb-6">{info.shipping}</p>
-      {info.prints && (
+      <h2 class="mb-2 text-lg font-bold text-text">{page.pricingHeading}</h2>
+      <p class="mb-6">{page.infoBox.pricing}</p>
+      <h2 class="mb-2 text-lg font-bold text-text">{page.shippingHeading}</h2>
+      <p class="mb-6">{page.infoBox.shipping}</p>
+      {page.infoBox.prints && (
         <>
-          <h2 class="mb-2 text-lg font-bold text-text">Fine Giclee Prints</h2>
-          <p>{info.prints}</p>
+          <h2 class="mb-2 text-lg font-bold text-text">{page.printsHeading}</h2>
+          <p>{page.infoBox.prints}</p>
         </>
       )}
     </div>

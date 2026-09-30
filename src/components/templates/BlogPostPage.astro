@@ -2,11 +2,10 @@
 import ArticleBlocks from "../ArticleBlocks.astro";
 
 const { page } = Astro.props;
-const blocks = page.blocks || [];
-const lead = page.lead;
 ---
 
-<article class="px-4 py-8">
+<section class="px-4 py-8">
+  <article>
   <div class="mx-auto max-w-3xl">
     <h1 class="mb-6 text-center text-2xl font-semibold text-text md:text-3xl">{page.heading}</h1>
 
@@ -18,10 +17,11 @@ const lead = page.lead;
       />
     )}
 
-    {lead && (
-      <p class="mb-6 text-lg font-semibold leading-relaxed text-text md:text-xl">{lead}</p>
+    {page.lead && (
+      <p class="mb-6 text-lg font-semibold leading-relaxed text-text md:text-xl">{page.lead}</p>
     )}
 
-    <ArticleBlocks blocks={blocks} />
+    <ArticleBlocks blocks={page.blocks} />
   </div>
-</article>
+  </article>
+</section>

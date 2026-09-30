@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HomePage from "../components/templates/HomePage.astro";
+import BlogListPage from "../components/templates/BlogListPage.astro";
 import cms from "../cms/content.json";
 
-const page = cms.pageContent["/"];
+const page = cms.pageContent["/alisons-blog"];
 ---
 
 <BaseLayout title={page.seo.title} description={page.seo.description}>
-  <HomePage page={page} />
+  <BlogListPage page={page} />
 </BaseLayout>

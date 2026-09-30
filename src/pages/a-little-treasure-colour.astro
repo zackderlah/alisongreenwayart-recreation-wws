@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HomePage from "../components/templates/HomePage.astro";
+import ProductPage from "../components/templates/ProductPage.astro";
 import cms from "../cms/content.json";
 
-const page = cms.pageContent["/"];
+const page = cms.pageContent["/a-little-treasure-colour"];
 ---
 
 <BaseLayout title={page.seo.title} description={page.seo.description}>
-  <HomePage page={page} />
+  <ProductPage page={page} />
 </BaseLayout>

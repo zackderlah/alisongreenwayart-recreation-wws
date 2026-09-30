@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HomePage from "../components/templates/HomePage.astro";
+import CollectionPage from "../components/templates/CollectionPage.astro";
 import cms from "../cms/content.json";
 
-const page = cms.pageContent["/"];
+const page = cms.pageContent["/queensland+cottage+art+collection"];
 ---
 
 <BaseLayout title={page.seo.title} description={page.seo.description}>
-  <HomePage page={page} />
+  <CollectionPage page={page} />
 </BaseLayout>

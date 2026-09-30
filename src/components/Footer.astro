@@ -3,18 +3,18 @@ import { site } from "../lib/cms";
 ---
 
 <footer class="mt-auto bg-gradient-to-b from-[#f0eeec] to-[#e8e4e0] px-4 py-12 text-center">
-  <div class="mx-auto max-w-4xl">
+  <section class="mx-auto max-w-4xl">
     {site.logo && (
       <img src={site.logo} alt={site.name} class="mx-auto mb-4 h-16 w-16 object-contain" width="64" height="64" />
     )}
     <h2 class="mb-4 text-lg font-semibold text-text">{site.name}</h2>
     <p class="mb-1">
-      <span class="font-medium">P:</span>
-      <a href={`tel:${site.phone}`} class="text-link hover:underline">{site.phone}</a>
+      <span class="font-medium">{site.phoneLabel}</span>
+      <a href={site.phoneHref} class="text-link hover:underline">{site.phone}</a>
     </p>
     <p class="mb-6">
-      <span class="font-medium">E:</span>
-      <a href={`mailto:${site.email}`} class="text-link hover:underline">{site.email}</a>
+      <span class="font-medium">{site.emailLabel}</span>
+      <a href={site.emailHref} class="text-link hover:underline">{site.email}</a>
     </p>
 
     <div class="mb-6 flex justify-center gap-4">
@@ -32,10 +32,10 @@ import { site } from "../lib/cms";
       ))}
     </nav>
 
-    <a href="/terms-and-conditions" class="text-sm text-link hover:underline">Terms and Conditions</a>
+    <a href="/terms-and-conditions" class="text-sm text-link hover:underline">{site.termsLabel}</a>
 
     <p class="mt-8 text-xs text-gray-500">
-      Designed by <a href="https://www.workingwebsites.net.au/" class="text-link hover:underline" target="_blank" rel="noopener noreferrer">Working Websites</a>
+      {site.creditPrefix} <a href={site.creditHref} class="text-link hover:underline" target="_blank" rel="noopener noreferrer">{site.creditName}</a>
     </p>
-  </div>
+  </section>
 </footer>

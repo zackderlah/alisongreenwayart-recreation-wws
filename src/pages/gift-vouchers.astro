@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HomePage from "../components/templates/HomePage.astro";
+import GiftVouchersPage from "../components/templates/GiftVouchersPage.astro";
 import cms from "../cms/content.json";
 
-const page = cms.pageContent["/"];
+const page = cms.pageContent["/gift-vouchers"];
 ---
 
 <BaseLayout title={page.seo.title} description={page.seo.description}>
-  <HomePage page={page} />
+  <GiftVouchersPage page={page} />
 </BaseLayout>

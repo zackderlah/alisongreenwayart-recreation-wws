@@ -1,0 +1,15 @@
+---
+const { segments = [] } = Astro.props;
+---
+
+{segments.map((segment: { text: string; href?: string; strong?: boolean }) =>
+  segment.href ? (
+    <a href={segment.href} class="text-link hover:underline">
+      {segment.strong ? <strong>{segment.text}</strong> : segment.text}
+    </a>
+  ) : segment.strong ? (
+    <strong>{segment.text}</strong>
+  ) : (
+    segment.text
+  )
+)}

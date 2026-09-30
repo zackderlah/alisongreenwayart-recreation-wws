@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HomePage from "../components/templates/HomePage.astro";
+import ContactPage from "../components/templates/ContactPage.astro";
 import cms from "../cms/content.json";
 
-const page = cms.pageContent["/"];
+const page = cms.pageContent["/contact+alison+greenway"];
 ---
 
 <BaseLayout title={page.seo.title} description={page.seo.description}>
-  <HomePage page={page} />
+  <ContactPage page={page} />
 </BaseLayout>

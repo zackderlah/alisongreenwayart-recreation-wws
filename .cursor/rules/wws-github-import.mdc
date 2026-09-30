@@ -1,0 +1,25 @@
+---
+description: File contract so a recreated site imports into Working Websites Studio from GitHub
+alwaysApply: true
+---
+
+# WWS GitHub import
+
+Recreate the live site. Match its pages, copy, images, and layout. Do not redesign it or invent marketing copy.
+
+Stack: Astro, or plain HTML, CSS, and JS. Another framework is allowed only if each page still ends as static HTML in src/pages. index.html must not be an empty Vite root.
+
+- One page file per URL under src/pages. Home is src/pages/index.astro or index.html.
+- Copy and image paths go in src/cms/content.json as { "pageContent": { "/": {}, "/about": {} } }, keyed by path.
+- Image files live in the repo and are referenced as /assets/.... No hotlinks. No CSS-background heroes.
+- Do not add src/cms/pages.json. Do not add a wws/ folder.
+
+Templates print content.json. Allowed expressions: property paths, literals, .map(), .filter(), &&, ||, ===, ternaries, and optional chaining including list?.[0].
+
+- Render repeating lists in the template with .map(). Do not build them in a script or with innerHTML.
+- A catch-all route is only: for (const [path, page] of Object.entries(cms.pageContent)).
+- Pass the page object into the component that renders it. Do not hardcode another client's copy.
+
+Layout: wrap every visible region in <section>, including the hero. The hero is an <img> inside that section with a real src. Use headings, paragraphs, links, images, and simple flex. Do not use CSS grid, position:fixed chrome, or a widget that only appears after JavaScript runs for anything that must survive import.
+
+Done when every live URL has a page file and a content.json entry, every image src points at a file in the repo, lists render without a script, and there is no pages.json and no wws/ folder.

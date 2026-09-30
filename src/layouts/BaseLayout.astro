@@ -11,7 +11,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const pageTitle = title || site.name;
-const pageDescription = description || `${site.name} - Queensland artist`;
+const pageDescription = description || site.descriptionFallback;
 ---
 
 <!doctype html>
