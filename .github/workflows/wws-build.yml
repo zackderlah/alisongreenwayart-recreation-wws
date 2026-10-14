@@ -1,0 +1,61 @@
+# Builds the site so Working Websites Studio can import it exactly as
+# visitors see it. Publishes the build output to the wws-build branch.
+name: WWS build
+
+on:
+  push:
+    branches-ignore: [wws-build]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wws-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        if: hashFiles('package.json') != ''
+        with:
+          node-version: 22
+
+      - name: Install and build
+        if: hashFiles('package.json') != ''
+        run: |
+          if [ -f pnpm-lock.yaml ]; then corepack enable && pnpm install --frozen-lockfile && pnpm run build
+          elif [ -f yarn.lock ]; then corepack enable && yarn install --frozen-lockfile && yarn build
+          elif [ -f package-lock.json ]; then npm ci && npm run build
+          else npm install && npm run build
+          fi
+
+      - name: Find the build output
+        id: out
+        run: |
+          for d in dist out build _site; do
+            if [ -f "$d/index.html" ]; then echo "dir=$d" >> "$GITHUB_OUTPUT"; exit 0; fi
+          done
+          # Plain HTML site: the repo itself is the site.
+          if [ -f index.html ]; then
+            mkdir -p /tmp/wws-site && rsync -a --exclude .git --exclude .github ./ /tmp/wws-site/
+            echo "dir=/tmp/wws-site" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "No index.html in dist, out, build, _site or the repo root." >&2; exit 1
+
+      - name: Publish to the wws-build branch
+        env:
+          DIR: ${{ steps.out.outputs.dir }}
+          TOKEN: ${{ github.token }}
+        run: |
+          cd "$DIR"
+          printf '{"sha":"%s","builtAt":"%s"}\n' "$GITHUB_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > wws-build.json
+          git init -q -b wws-build
+          git add -A
+          git -c user.name="WWS build" -c user.email="wws-build@users.noreply.github.com" commit -qm "WWS build of $GITHUB_SHA"
+          git push -q -f "https://x-access-token:$TOKEN@github.com/$GITHUB_REPOSITORY.git" wws-build
